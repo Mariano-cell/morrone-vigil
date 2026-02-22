@@ -1,0 +1,45 @@
+{
+  "title": "Indoor Temperature for Typical Summer and Winter Days",
+  "comfortBands": {
+    "summer": { "label": "Summer EN16798", "min": 25, "max": 27, "color": "rgba(192,57,43,0.10)" },
+    "winter": { "label": "Winter EN16798", "min": 20, "max": 25, "color": "rgba(106,159,216,0.10)" }
+  },
+  "scenarios": [
+    {
+      "id": "base",
+      "label": "base scenario",
+      "summer": 28.7,
+      "winter": 21.8
+    },
+    {
+      "id": "curtain",
+      "label": "curtain 56% transmittance",
+      "summer": 28.1,
+      "winter": 21.8
+    },
+    {
+      "id": "occupancy",
+      "label": "occupancy",
+      "summer": 25.6,
+      "winter": 24.4
+    },
+    {
+      "id": "ventilation",
+      "label": "ventilation",
+      "summer": 23.9,
+      "winter": 21.8
+    },
+    {
+      "id": "insulation",
+      "label": "wall with insulation",
+      "summer": 29.2,
+      "winter": 23.0
+    },
+    {
+      "id": "glazing",
+      "label": "double glazing",
+      "summer": 30.7,
+      "winter": 27.4
+    }
+  ]
+}

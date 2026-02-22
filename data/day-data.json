@@ -1,0 +1,53 @@
+{
+  "title": "Tuesday 15 October",
+  "hourly": [
+    { "hour": 0,  "outdoorTemp": 12.0, "officeTemp": 20.2, "meetingTemp": 20.0, "solarRadiation": 0,    "officeCO2": 4.0,  "outdoorRH": 82, "officeRH": 52, "meetingRH": 55 },
+    { "hour": 1,  "outdoorTemp": 11.8, "officeTemp": 20.0, "meetingTemp": 19.8, "solarRadiation": 0,    "officeCO2": 3.8,  "outdoorRH": 84, "officeRH": 53, "meetingRH": 56 },
+    { "hour": 2,  "outdoorTemp": 11.5, "officeTemp": 19.8, "meetingTemp": 19.7, "solarRadiation": 0,    "officeCO2": 3.6,  "outdoorRH": 85, "officeRH": 53, "meetingRH": 56 },
+    { "hour": 3,  "outdoorTemp": 11.3, "officeTemp": 19.7, "meetingTemp": 19.6, "solarRadiation": 0,    "officeCO2": 3.5,  "outdoorRH": 86, "officeRH": 54, "meetingRH": 57 },
+    { "hour": 4,  "outdoorTemp": 11.2, "officeTemp": 19.6, "meetingTemp": 19.6, "solarRadiation": 0,    "officeCO2": 3.4,  "outdoorRH": 87, "officeRH": 54, "meetingRH": 57 },
+    { "hour": 5,  "outdoorTemp": 11.4, "officeTemp": 19.6, "meetingTemp": 19.6, "solarRadiation": 0,    "officeCO2": 3.5,  "outdoorRH": 86, "officeRH": 54, "meetingRH": 57 },
+    { "hour": 6,  "outdoorTemp": 11.8, "officeTemp": 19.7, "meetingTemp": 19.7, "solarRadiation": 0.5,  "officeCO2": 3.8,  "outdoorRH": 84, "officeRH": 53, "meetingRH": 56 },
+    { "hour": 7,  "outdoorTemp": 12.2, "officeTemp": 19.8, "meetingTemp": 19.8, "solarRadiation": 2.0,  "officeCO2": 5.0,  "outdoorRH": 80, "officeRH": 52, "meetingRH": 55 },
+    { "hour": 8,  "outdoorTemp": 13.0, "officeTemp": 20.0, "meetingTemp": 19.9, "solarRadiation": 4.5,  "officeCO2": 12.0, "outdoorRH": 75, "officeRH": 50, "meetingRH": 53 },
+    { "hour": 9,  "outdoorTemp": 13.8, "officeTemp": 20.4, "meetingTemp": 20.1, "solarRadiation": 7.0,  "officeCO2": 25.0, "outdoorRH": 68, "officeRH": 48, "meetingRH": 50 },
+    { "hour": 10, "outdoorTemp": 14.5, "officeTemp": 20.8, "meetingTemp": 20.3, "solarRadiation": 10.0, "officeCO2": 38.0, "outdoorRH": 62, "officeRH": 46, "meetingRH": 48 },
+    { "hour": 11, "outdoorTemp": 15.5, "officeTemp": 21.2, "meetingTemp": 20.6, "solarRadiation": 12.5, "officeCO2": 45.0, "outdoorRH": 55, "officeRH": 44, "meetingRH": 46 },
+    { "hour": 12, "outdoorTemp": 16.0, "officeTemp": 21.5, "meetingTemp": 20.8, "solarRadiation": 13.0, "officeCO2": 50.0, "outdoorRH": 50, "officeRH": 42, "meetingRH": 44 },
+    { "hour": 13, "outdoorTemp": 16.8, "officeTemp": 21.8, "meetingTemp": 21.0, "solarRadiation": 12.0, "officeCO2": 42.0, "outdoorRH": 48, "officeRH": 41, "meetingRH": 43 },
+    { "hour": 14, "outdoorTemp": 17.0, "officeTemp": 22.0, "meetingTemp": 21.5, "solarRadiation": 10.5, "officeCO2": 48.0, "outdoorRH": 46, "officeRH": 40, "meetingRH": 42 },
+    { "hour": 15, "outdoorTemp": 17.2, "officeTemp": 22.2, "meetingTemp": 21.8, "solarRadiation": 8.0,  "officeCO2": 52.0, "outdoorRH": 45, "officeRH": 39, "meetingRH": 41 },
+    { "hour": 16, "outdoorTemp": 16.8, "officeTemp": 22.4, "meetingTemp": 22.0, "solarRadiation": 5.0,  "officeCO2": 55.0, "outdoorRH": 48, "officeRH": 40, "meetingRH": 42 },
+    { "hour": 17, "outdoorTemp": 16.0, "officeTemp": 22.2, "meetingTemp": 22.4, "solarRadiation": 2.5,  "officeCO2": 48.0, "outdoorRH": 52, "officeRH": 42, "meetingRH": 44 },
+    { "hour": 18, "outdoorTemp": 15.2, "officeTemp": 21.8, "meetingTemp": 22.0, "solarRadiation": 0.5,  "officeCO2": 35.0, "outdoorRH": 58, "officeRH": 44, "meetingRH": 46 },
+    { "hour": 19, "outdoorTemp": 14.5, "officeTemp": 21.4, "meetingTemp": 21.5, "solarRadiation": 0,    "officeCO2": 20.0, "outdoorRH": 62, "officeRH": 46, "meetingRH": 48 },
+    { "hour": 20, "outdoorTemp": 14.0, "officeTemp": 21.0, "meetingTemp": 21.0, "solarRadiation": 0,    "officeCO2": 10.0, "outdoorRH": 66, "officeRH": 48, "meetingRH": 50 },
+    { "hour": 21, "outdoorTemp": 13.5, "officeTemp": 20.8, "meetingTemp": 20.6, "solarRadiation": 0,    "officeCO2": 6.0,  "outdoorRH": 70, "officeRH": 50, "meetingRH": 52 },
+    { "hour": 22, "outdoorTemp": 13.0, "officeTemp": 20.5, "meetingTemp": 20.4, "solarRadiation": 0,    "officeCO2": 4.5,  "outdoorRH": 74, "officeRH": 51, "meetingRH": 53 },
+    { "hour": 23, "outdoorTemp": 12.5, "officeTemp": 20.3, "meetingTemp": 20.2, "solarRadiation": 0,    "officeCO2": 4.0,  "outdoorRH": 78, "officeRH": 52, "meetingRH": 54 }
+  ],
+  "schedules": {
+    "occupancy": [
+      { "start": 8,  "end": 10, "value": "3x" },
+      { "start": 10, "end": 13, "value": "6x" },
+      { "start": 13, "end": 14, "value": "3x" },
+      { "start": 14, "end": 17, "value": "6x" },
+      { "start": 17, "end": 19, "value": "4x" }
+    ],
+    "computers": [
+      { "start": 8,  "end": 10, "value": "2x" },
+      { "start": 10, "end": 17, "value": "7x" },
+      { "start": 17, "end": 19, "value": "3x" }
+    ],
+    "lights": [
+      { "start": 7,  "end": 10, "value": "4x" },
+      { "start": 10, "end": 11, "value": "1x" },
+      { "start": 14, "end": 19, "value": "4x" }
+    ]
+  },
+  "keyData": {
+    "outdoor": { "deltaT": 6, "avg": 13.6, "max": 17.2, "min": 11.2 },
+    "mainOffice": { "deltaT": 3, "avg": 20.9, "max": 22.4, "min": 19.6 },
+    "meetingRoom": { "deltaT": 3, "avg": 20.3, "max": 22.4, "min": 19.6 }
+  }
+}

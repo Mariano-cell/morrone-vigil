@@ -1,0 +1,14 @@
+{
+  "title": "Existing Building Carbon Analysis",
+  "unit": "kg CO2e/m²",
+  "categories": [
+    { "label": "Services", "value": 207 },
+    { "label": "Internal finishes", "value": 179 },
+    { "label": "Internal walls", "value": 20 },
+    { "label": "Windows", "value": 133 },
+    { "label": "External walls", "value": 25 },
+    { "label": "Roof", "value": 31 },
+    { "label": "Upper floors", "value": 87 },
+    { "label": "Superstructure", "value": 158 }
+  ]
+}

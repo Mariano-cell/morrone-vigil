@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>timbó</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <svg style="position:absolute;width:0;height:0;pointer-events:none">
+    <filter id="v-stretch">
+      <feGaussianBlur stdDeviation="0,40"/>
+    </filter>
+  </svg>
+
+  <header class="site-header">
+    <nav>
+      <a href="#" id="btn-proyectos">Proyectos</a>
+      <a href="#">Sobre nosotros</a>
+    </nav>
+  </header>
+
+  <!-- Projects overlay -->
+  <div class="projects-overlay" id="projects-overlay">
+    <button class="projects-close" id="projects-close">&times;</button>
+    <div class="projects-grid">
+      <div class="projects-image">
+        <img src="img/red-earth.jpg" alt="Projects" id="projects-img">
+      </div>
+      <div class="projects-menu">
+        <div class="projects-semicircle">
+          <svg class="semicircle-line" viewBox="0 0 500 1000" preserveAspectRatio="none">
+            <path d="M500 0 C500 0, 0 250, 0 500 C0 750, 500 1000, 500 1000" stroke="rgba(240,235,227,0.2)" stroke-width="1" fill="none"/>
+          </svg>
+          <a href="#" class="project-link" style="--i:0">Casa Piedra</a>
+          <a href="#" class="project-link" style="--i:1">Refugio Andino</a>
+          <a href="#" class="project-link" style="--i:2">Torre Río</a>
+          <a href="#" class="project-link" style="--i:3">Vivienda Bosque</a>
+          <a href="#" class="project-link" style="--i:4">Bodega Termal</a>
+          <a href="#" class="project-link" style="--i:5">Centro Cívico</a>
+          <a href="#" class="project-link" style="--i:6">Pabellón Sur</a>
+          <a href="#" class="project-link" style="--i:7">Escuela Solar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <h1>
+      TIMBÓ
+      <svg class="hero-underline" viewBox="0 0 320 12" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 8 C20 8, 35 4, 60 6 C85 8, 100 3, 130 5 C160 7, 175 4, 200 6 C225 8, 245 3, 270 5 C295 7, 305 5, 318 6"/>
+      </svg>
+    </h1>
+  </section>
+
+  <div class="hero-fullimage">
+    <img src="img/hero-stone.jpg" alt="Stone texture" loading="eager">
+  </div>
+
+  <div class="hero-fullimage">
+    <img src="img/wood-texture.jpg" alt="Wood texture" loading="eager">
+  </div>
+
+  <div class="phrase-interstitial phrase-right">
+    <p class="phrase" data-anim="fade-left">Geography shapes form</p>
+  </div>
+
+  <div class="values-carousel">
+    <div class="values-track">
+      <!-- 10 value items -->
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="16" r="8" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="20" y1="8" x2="20" y2="2" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="20" y1="24" x2="20" y2="28" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="12" y1="16" x2="6" y2="16" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="28" y1="16" x2="34" y2="16" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="14.34" y1="10.34" x2="10" y2="6" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="25.66" y1="21.66" x2="30" y2="26" stroke="#2d4a35" stroke-width="2"/>
+          <rect x="30" y="28" width="22" height="26" stroke="#2d4a35" stroke-width="2"/>
+          <rect x="36" y="36" width="6" height="8" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="30" y1="44" x2="52" y2="44" stroke="#2d4a35" stroke-width="1"/>
+        </svg>
+        <span>Climate Design</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 8 C30 8 18 20 18 32 C18 40 23.4 46 30 46 C36.6 46 42 40 42 32 C42 20 30 8 30 8Z" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="18" x2="30" y2="42" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="24" y1="26" x2="30" y2="22" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="36" y1="30" x2="30" y2="26" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="22" y1="34" x2="30" y2="30" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="38" y1="38" x2="30" y2="34" stroke="#2d4a35" stroke-width="1.5"/>
+        </svg>
+        <span>Sustainability</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 50 C16 42 20 38 24 36 C28 34 32 36 36 34 C40 32 44 26 48 10" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <path d="M12 50 C16 46 22 44 28 44 C34 44 40 40 48 30" stroke="#2d4a35" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+          <path d="M12 50 C18 48 26 48 34 50 C42 52 48 46 48 42" stroke="#2d4a35" stroke-width="2" fill="none" stroke-dasharray="1 3"/>
+          <circle cx="12" cy="50" r="2.5" fill="#2d4a35"/>
+          <circle cx="48" cy="10" r="2.5" fill="#2d4a35"/>
+        </svg>
+        <span>Thermal Comfort</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="28" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="#2d4a35">CO₂</text>
+          <line x1="42" y1="16" x2="42" y2="48" stroke="#2d4a35" stroke-width="2"/>
+          <polyline points="34,40 42,48 50,40" stroke="#2d4a35" stroke-width="2" fill="none"/>
+        </svg>
+        <span>Low Carbon</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 20 C14 16 20 24 26 20 C32 16 38 24 44 20 C50 16 54 20 56 18" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <path d="M4 30 C10 26 16 34 22 30 C28 26 34 34 40 30 C46 26 50 30 56 28" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <path d="M8 40 C14 36 20 44 26 40 C32 36 38 44 44 40 C50 36 54 40 56 38" stroke="#2d4a35" stroke-width="2" fill="none"/>
+        </svg>
+        <span>Natural Ventilation</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 46 L14 38 L22 42 L30 30 L38 34 L46 24 L54 28" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <path d="M6 46 L14 38 L22 42 L30 30 L38 34 L46 24 L54 28 L54 52 L6 52 Z" fill="#2d4a35" opacity="0.08"/>
+          <circle cx="30" cy="30" r="2" fill="#2d4a35"/>
+          <line x1="6" y1="52" x2="54" y2="52" stroke="#2d4a35" stroke-width="1.5"/>
+        </svg>
+        <span>Site Response</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="34" width="8" height="18" fill="#2d4a35" opacity="0.25"/>
+          <rect x="22" y="24" width="8" height="28" fill="#2d4a35" opacity="0.45"/>
+          <rect x="34" y="14" width="8" height="38" fill="#2d4a35" opacity="0.65"/>
+          <rect x="46" y="8" width="8" height="44" fill="#2d4a35" opacity="0.85"/>
+          <line x1="6" y1="52" x2="58" y2="52" stroke="#2d4a35" stroke-width="1.5"/>
+        </svg>
+        <span>Data-Driven</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="10" width="36" height="10" stroke="#2d4a35" stroke-width="2" fill="#2d4a35" opacity="0.1"/>
+          <rect x="12" y="22" width="36" height="10" stroke="#2d4a35" stroke-width="2" fill="#2d4a35" opacity="0.2"/>
+          <rect x="12" y="34" width="36" height="10" stroke="#2d4a35" stroke-width="2" fill="#2d4a35" opacity="0.35"/>
+          <line x1="30" y1="10" x2="30" y2="44" stroke="#2d4a35" stroke-width="1" stroke-dasharray="2 2"/>
+        </svg>
+        <span>Material Honesty</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="14" r="8" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="18" y1="6" x2="18" y2="2" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="12.34" y1="8.34" x2="9" y2="5" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="23.66" y1="8.34" x2="27" y2="5" stroke="#2d4a35" stroke-width="1.5"/>
+          <polygon points="32,18 54,18 54,52 32,52" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <polygon points="18,22 32,18 32,52 18,52" fill="#2d4a35" opacity="0.12"/>
+          <polygon points="18,22 32,18 32,52 18,52" stroke="#2d4a35" stroke-width="2" fill="none"/>
+        </svg>
+        <span>Passive Strategy</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="14" r="6" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="20" x2="30" y2="40" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="28" x2="20" y2="34" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="28" x2="40" y2="34" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="40" x2="22" y2="52" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="40" x2="38" y2="52" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="10" y1="20" x2="10" y2="52" stroke="#2d4a35" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+          <line x1="50" y1="20" x2="50" y2="52" stroke="#2d4a35" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+        </svg>
+        <span>Human Scale</span>
+      </div>
+      <!-- Duplicated for infinite loop -->
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="16" r="8" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="20" y1="8" x2="20" y2="2" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="20" y1="24" x2="20" y2="28" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="12" y1="16" x2="6" y2="16" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="28" y1="16" x2="34" y2="16" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="14.34" y1="10.34" x2="10" y2="6" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="25.66" y1="21.66" x2="30" y2="26" stroke="#2d4a35" stroke-width="2"/>
+          <rect x="30" y="28" width="22" height="26" stroke="#2d4a35" stroke-width="2"/>
+          <rect x="36" y="36" width="6" height="8" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="30" y1="44" x2="52" y2="44" stroke="#2d4a35" stroke-width="1"/>
+        </svg>
+        <span>Climate Design</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M30 8 C30 8 18 20 18 32 C18 40 23.4 46 30 46 C36.6 46 42 40 42 32 C42 20 30 8 30 8Z" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="18" x2="30" y2="42" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="24" y1="26" x2="30" y2="22" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="36" y1="30" x2="30" y2="26" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="22" y1="34" x2="30" y2="30" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="38" y1="38" x2="30" y2="34" stroke="#2d4a35" stroke-width="1.5"/>
+        </svg>
+        <span>Sustainability</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 50 C16 42 20 38 24 36 C28 34 32 36 36 34 C40 32 44 26 48 10" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <path d="M12 50 C16 46 22 44 28 44 C34 44 40 40 48 30" stroke="#2d4a35" stroke-width="2" fill="none" stroke-dasharray="4 3"/>
+          <path d="M12 50 C18 48 26 48 34 50 C42 52 48 46 48 42" stroke="#2d4a35" stroke-width="2" fill="none" stroke-dasharray="1 3"/>
+          <circle cx="12" cy="50" r="2.5" fill="#2d4a35"/>
+          <circle cx="48" cy="10" r="2.5" fill="#2d4a35"/>
+        </svg>
+        <span>Thermal Comfort</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="10" y="28" font-family="DM Sans, sans-serif" font-size="16" font-weight="600" fill="#2d4a35">CO₂</text>
+          <line x1="42" y1="16" x2="42" y2="48" stroke="#2d4a35" stroke-width="2"/>
+          <polyline points="34,40 42,48 50,40" stroke="#2d4a35" stroke-width="2" fill="none"/>
+        </svg>
+        <span>Low Carbon</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 20 C14 16 20 24 26 20 C32 16 38 24 44 20 C50 16 54 20 56 18" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <path d="M4 30 C10 26 16 34 22 30 C28 26 34 34 40 30 C46 26 50 30 56 28" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <path d="M8 40 C14 36 20 44 26 40 C32 36 38 44 44 40 C50 36 54 40 56 38" stroke="#2d4a35" stroke-width="2" fill="none"/>
+        </svg>
+        <span>Natural Ventilation</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 46 L14 38 L22 42 L30 30 L38 34 L46 24 L54 28" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <path d="M6 46 L14 38 L22 42 L30 30 L38 34 L46 24 L54 28 L54 52 L6 52 Z" fill="#2d4a35" opacity="0.08"/>
+          <circle cx="30" cy="30" r="2" fill="#2d4a35"/>
+          <line x1="6" y1="52" x2="54" y2="52" stroke="#2d4a35" stroke-width="1.5"/>
+        </svg>
+        <span>Site Response</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="10" y="34" width="8" height="18" fill="#2d4a35" opacity="0.25"/>
+          <rect x="22" y="24" width="8" height="28" fill="#2d4a35" opacity="0.45"/>
+          <rect x="34" y="14" width="8" height="38" fill="#2d4a35" opacity="0.65"/>
+          <rect x="46" y="8" width="8" height="44" fill="#2d4a35" opacity="0.85"/>
+          <line x1="6" y1="52" x2="58" y2="52" stroke="#2d4a35" stroke-width="1.5"/>
+        </svg>
+        <span>Data-Driven</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="10" width="36" height="10" stroke="#2d4a35" stroke-width="2" fill="#2d4a35" opacity="0.1"/>
+          <rect x="12" y="22" width="36" height="10" stroke="#2d4a35" stroke-width="2" fill="#2d4a35" opacity="0.2"/>
+          <rect x="12" y="34" width="36" height="10" stroke="#2d4a35" stroke-width="2" fill="#2d4a35" opacity="0.35"/>
+          <line x1="30" y1="10" x2="30" y2="44" stroke="#2d4a35" stroke-width="1" stroke-dasharray="2 2"/>
+        </svg>
+        <span>Material Honesty</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="14" r="8" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="18" y1="6" x2="18" y2="2" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="12.34" y1="8.34" x2="9" y2="5" stroke="#2d4a35" stroke-width="1.5"/>
+          <line x1="23.66" y1="8.34" x2="27" y2="5" stroke="#2d4a35" stroke-width="1.5"/>
+          <polygon points="32,18 54,18 54,52 32,52" stroke="#2d4a35" stroke-width="2" fill="none"/>
+          <polygon points="18,22 32,18 32,52 18,52" fill="#2d4a35" opacity="0.12"/>
+          <polygon points="18,22 32,18 32,52 18,52" stroke="#2d4a35" stroke-width="2" fill="none"/>
+        </svg>
+        <span>Passive Strategy</span>
+      </div>
+      <div class="value-item">
+        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="30" cy="14" r="6" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="20" x2="30" y2="40" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="28" x2="20" y2="34" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="28" x2="40" y2="34" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="40" x2="22" y2="52" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="30" y1="40" x2="38" y2="52" stroke="#2d4a35" stroke-width="2"/>
+          <line x1="10" y1="20" x2="10" y2="52" stroke="#2d4a35" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+          <line x1="50" y1="20" x2="50" y2="52" stroke="#2d4a35" stroke-width="1" stroke-dasharray="3 3" opacity="0.4"/>
+        </svg>
+        <span>Human Scale</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="phrase-interstitial phrase-left">
+    <p class="phrase" data-anim="fade-up">Climate-led architecture</p>
+  </div>
+
+  <div class="section-bg section-beige">
+    <div class="chart-section">
+      <div class="chart-col">
+        <div id="chart"></div>
+      </div>
+      <div class="text-col">
+        <span class="section-num">01</span>
+        <h2>DAY GRAPH</h2>
+        <p class="lead">A single-day snapshot from Tuesday 15 October reveals occupancy rhythms, equipment schedules and their direct impact on internal temperature.</p>
+        <p>Six occupants share the office with a fridge running continuously and computers active during work hours — two often left on overnight for simulations. Lighting relies on two manually switched circuits of 58W fluorescent tubes, typically activated around 3 PM, though recent construction nearby has pushed that earlier.</p>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-value">12.3°C</span>
+            <span class="stat-label">Outdoor ΔT</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">3.1°C</span>
+            <span class="stat-label">Office ΔT</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">4.2°C</span>
+            <span class="stat-label">Meeting ΔT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="image-gallery">
+    <div class="gallery-hero">
+      <img src="img/architecture-reflect.jpg" alt="Modern architecture with water reflection" loading="lazy">
+      <p class="phrase phrase-overlay" data-anim="fade-blur">Performance defines design</p>
+    </div>
+    <div class="gallery-row">
+      <img src="img/water-river.jpg" alt="River water texture" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" alt="Nature integrated design" loading="lazy">
+    </div>
+  </div>
+
+  <div class="phrase-interstitial phrase-left">
+    <p class="phrase" data-anim="fade-right">Form driven by climate</p>
+  </div>
+
+  <div class="section-bg section-blue">
+    <div class="chart-section">
+      <div class="chart-col">
+        <div id="thermal-chart" class="chart-container"></div>
+      </div>
+      <div class="text-col">
+        <span class="section-num">02</span>
+        <h2>THERMAL ITERATIONS</h2>
+        <p class="lead">Multiple scenarios — from curtain use to double glazing — were tested to quantify each intervention's effect on summer cooling and winter comfort.</p>
+        <p>Increased ventilation proved most effective for cooling; improved window performance best addressed winter conditions. Window infiltration remains the primary source of thermal discomfort and fluctuation.</p>
+        <div class="key-data-text">
+          <h3>Base Scenario Inputs</h3>
+          <table class="data-table">
+            <tbody>
+              <tr><td>Roof U-value</td><td>0.24 W/m²K</td></tr>
+              <tr><td>Windows U-value</td><td>5.7 W/m²K</td></tr>
+              <tr><td>External wall U-value</td><td>1.43 W/m²K</td></tr>
+              <tr><td>Infiltration rate</td><td>0.5 ac/h</td></tr>
+              <tr><td>Fresh air</td><td>30 m³/person hr</td></tr>
+              <tr><td>Vent. for cooling</td><td>S = 3 / W = 0 ac/h</td></tr>
+              <tr><td>Occupancy</td><td>263 W (6 × 117 W for 9h)</td></tr>
+              <tr><td>Fridge</td><td>100 W (1 × 100 W for 24h)</td></tr>
+              <tr><td>Computers</td><td>900 W (6 × 400 W for 9h)</td></tr>
+              <tr><td>Lights</td><td>121 W (10 × 58 W for 5h)</td></tr>
+              <tr><td>Incident solar</td><td>S = 1.25 / W = 0.3 kWh/m² per day (80% transmitted)</td></tr>
+              <tr><td>Outdoor temp.</td><td>S = 18.8 / W = 7 °C</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phrase-interstitial phrase-right-2">
+    <p class="phrase" data-anim="scale-up">Territory as framework</p>
+  </div>
+
+  <div class="image-gallery">
+    <div class="gallery-hero">
+      <img src="img/water-ocean.jpg" alt="Ocean water texture from above" loading="lazy">
+      <p class="phrase phrase-overlay" data-anim="clip-reveal">Context as structure</p>
+    </div>
+    <div class="gallery-row">
+      <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80" alt="Mountain architecture" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Wood and concrete design" loading="lazy">
+    </div>
+  </div>
+
+  <div class="phrase-interstitial phrase-left-2">
+    <p class="phrase" data-anim="tracking-expand">Landscape informs architecture</p>
+  </div>
+
+  <div class="section-bg section-green">
+    <div class="chart-section">
+      <div class="chart-col">
+        <div id="carbon-chart" class="chart-container"></div>
+      </div>
+      <div class="text-col">
+        <span class="section-num">03</span>
+        <h2>EMBODIED CARBON &amp; U-VALUES</h2>
+        <p class="lead">Total embodied carbon is estimated at 840 kg CO₂e/m² — driven primarily by services and the superstructure, with windows and finishes splitting the remainder.</p>
+        <p>Services (HVAC, electrical, plumbing) lead at 207 kg CO₂e/m². The concrete core and steel-frame superstructure follow, while aluminium-framed double glazing accounts for 133 kg CO₂e/m². Internal finishes contribute 179 kg CO₂e/m²; walls and roof remain modest.</p>
+        <div class="stat-grid stat-grid-4">
+          <div class="stat-card">
+            <span class="stat-value">30%</span>
+            <span class="stat-label">Services & HVAC</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">20%</span>
+            <span class="stat-label">Internal Finishes</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">20%</span>
+            <span class="stat-label">Windows</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value">30%</span>
+            <span class="stat-label">Superstructure</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phrase-interstitial phrase-right-2">
+    <p class="phrase" data-anim="fade-up-slow">Design from site logic</p>
+  </div>
+
+  <div class="image-gallery">
+    <div class="gallery-hero">
+      <img src="img/water-calm.jpg" alt="Calm water ripples" loading="lazy">
+      <p class="phrase phrase-overlay" data-anim="fade-in">Architecture rooted in data</p>
+    </div>
+    <div class="gallery-row">
+      <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" alt="Earth-toned architecture" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80" alt="Architecture in landscape" loading="lazy">
+    </div>
+  </div>
+
+  <div class="phrase-interstitial phrase-left-3">
+    <p class="phrase" data-anim="slide-down">Place-driven design</p>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/thermal-chart.js"></script>
+  <script src="js/carbon-chart.js"></script>
+  <script src="js/scroll-animations.js"></script>
+  <script>
+    // Projects overlay
+    (() => {
+      const btn = document.getElementById('btn-proyectos');
+      const overlay = document.getElementById('projects-overlay');
+      const close = document.getElementById('projects-close');
+      if (!btn || !overlay) return;
+
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        overlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      function closeOverlay() {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      close.addEventListener('click', closeOverlay);
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeOverlay();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) closeOverlay();
+      });
+    })();
+  </script>
+</body>
+</html>
