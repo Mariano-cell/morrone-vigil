@@ -1,3 +1,6 @@
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
 (function () {
   var section = document.querySelector('.model-section');
   var canvas = document.getElementById('model-canvas');
@@ -27,7 +30,7 @@
 
   // Model
   var model = null;
-  var loader = new THREE.GLTFLoader();
+  var loader = new GLTFLoader();
   loader.load('img/model.glb', function (gltf) {
     model = gltf.scene;
 
