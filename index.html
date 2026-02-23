@@ -416,6 +416,134 @@
     </div>
   </div>
 
+  <div class="phrase-interstitial phrase-left-2">
+    <p class="phrase" data-anim="fade-up">La casa se adapta</p>
+  </div>
+
+  <div class="section-bg section-beige casa-adapta-root" data-wind="off">
+    <div class="chart-section">
+      <div class="chart-col">
+        <svg id="casa-svg" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive building cross-section showing passive design strategies">
+          <defs>
+            <linearGradient id="casa-sky-grad" x1="0" y1="0" x2="0" y2="1">
+              <stop id="casa-sky-stop0" offset="0%" stop-color="#87CEEB"/>
+              <stop id="casa-sky-stop1" offset="100%" stop-color="#b0d4e8"/>
+            </linearGradient>
+            <clipPath id="casa-interior-clip">
+              <rect x="101" y="131" width="398" height="198"/>
+            </clipPath>
+            <marker id="casa-arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+              <path d="M0,0 L6,2 L0,4" fill="none" stroke="#2d4a35" stroke-width="1"/>
+            </marker>
+          </defs>
+
+          <!-- Sky -->
+          <rect x="0" y="0" width="600" height="340" fill="url(#casa-sky-grad)"/>
+
+          <!-- Sun -->
+          <g id="casa-sun-group" transform="translate(300,60)">
+            <circle r="18" fill="#f5c842" opacity="0.9"/>
+            <line x1="0" y1="-26" x2="0" y2="-32" stroke="#f5c842" stroke-width="2"/>
+            <line x1="0" y1="26" x2="0" y2="32" stroke="#f5c842" stroke-width="2"/>
+            <line x1="-26" y1="0" x2="-32" y2="0" stroke="#f5c842" stroke-width="2"/>
+            <line x1="26" y1="0" x2="32" y2="0" stroke="#f5c842" stroke-width="2"/>
+            <line x1="-18" y1="-18" x2="-23" y2="-23" stroke="#f5c842" stroke-width="2"/>
+            <line x1="18" y1="-18" x2="23" y2="-23" stroke="#f5c842" stroke-width="2"/>
+            <line x1="-18" y1="18" x2="-23" y2="23" stroke="#f5c842" stroke-width="2"/>
+            <line x1="18" y1="18" x2="23" y2="23" stroke="#f5c842" stroke-width="2"/>
+          </g>
+
+          <!-- Ground -->
+          <rect x="0" y="340" width="600" height="60" fill="#c4a882"/>
+          <line x1="0" y1="340" x2="600" y2="340" stroke="#8a7560" stroke-width="1.5"/>
+
+          <!-- Building structure (stroke-only) -->
+          <!-- Roof slab with overhangs -->
+          <line x1="70" y1="120" x2="530" y2="120" stroke="#2d4a35" stroke-width="3"/>
+          <line x1="70" y1="130" x2="530" y2="130" stroke="#2d4a35" stroke-width="2"/>
+          <!-- Left wall -->
+          <line x1="100" y1="130" x2="100" y2="340" stroke="#2d4a35" stroke-width="2.5"/>
+          <!-- Right wall (with window gap 170-290) -->
+          <line x1="500" y1="130" x2="500" y2="170" stroke="#2d4a35" stroke-width="2.5"/>
+          <line x1="500" y1="290" x2="500" y2="340" stroke="#2d4a35" stroke-width="2.5"/>
+          <!-- Window frame -->
+          <rect x="340" y="170" width="160" height="120" fill="none" stroke="#2d4a35" stroke-width="1.5"/>
+          <!-- Interior floor -->
+          <line x1="100" y1="330" x2="500" y2="330" stroke="#2d4a35" stroke-width="1" opacity="0.4"/>
+          <!-- Ground slab -->
+          <line x1="70" y1="340" x2="530" y2="340" stroke="#2d4a35" stroke-width="3"/>
+
+          <!-- Light beam (clipped to interior) -->
+          <polygon id="casa-lightbeam" points="500,170 500,290 400,330 450,330" fill="#f5c842" opacity="0.06" clip-path="url(#casa-interior-clip)"/>
+
+          <!-- Floor glow -->
+          <rect id="casa-floorglow" x="400" y="324" width="80" height="6" fill="#f5c842" opacity="0.1" rx="2"/>
+
+          <!-- Brise-soleil louvers -->
+          <g id="casa-brise" style="opacity: var(--brise-opacity, 0)">
+            <rect x="340" y="132" width="90" height="5" fill="#2d4a35" rx="1"/>
+            <rect x="340" y="141" width="90" height="5" fill="#2d4a35" rx="1"/>
+            <rect x="340" y="150" width="90" height="5" fill="#2d4a35" rx="1"/>
+            <rect x="340" y="159" width="90" height="5" fill="#2d4a35" rx="1"/>
+            <rect x="340" y="168" width="90" height="5" fill="#2d4a35" rx="1"/>
+          </g>
+
+          <!-- Wind arrows (clipped to interior) -->
+          <g id="casa-wind-arrows" clip-path="url(#casa-interior-clip)" style="opacity:0">
+            <path class="casa-wind-path" d="M110,200 C200,190 300,210 490,200" fill="none" stroke="#2d4a35" stroke-width="1.5" stroke-dasharray="8 6" marker-end="url(#casa-arrowhead)"/>
+            <path class="casa-wind-path" d="M110,240 C200,230 300,250 490,240" fill="none" stroke="#2d4a35" stroke-width="1.5" stroke-dasharray="8 6" marker-end="url(#casa-arrowhead)"/>
+            <path class="casa-wind-path" d="M110,280 C200,270 300,290 490,280" fill="none" stroke="#2d4a35" stroke-width="1.5" stroke-dasharray="8 6" marker-end="url(#casa-arrowhead)"/>
+          </g>
+        </svg>
+      </div>
+      <div class="text-col">
+        <span class="section-num">04</span>
+        <h2>LA CASA SE ADAPTA</h2>
+        <p class="lead">An interactive building section lets you manipulate sun position, temperature, and ventilation to see how passive design strategies respond in real time.</p>
+        <p>Move the sliders to explore how the building's brise-soleil, natural light, and cross-ventilation adapt to changing conditions throughout the day and across seasons.</p>
+        <div class="casa-controls" role="group" aria-label="Building section controls">
+          <div class="casa-control">
+            <label>
+              <span class="casa-control-label">Hora del día</span>
+              <output id="casa-time-out">12:00</output>
+            </label>
+            <input type="range" id="casa-time" min="0" max="24" step="0.5" value="12">
+          </div>
+          <div class="casa-control">
+            <label>
+              <span class="casa-control-label">Temperatura</span>
+              <output id="casa-temp-out">22 °C</output>
+            </label>
+            <input type="range" id="casa-temp" min="-5" max="40" step="1" value="22">
+          </div>
+          <div class="casa-control">
+            <label>
+              <span class="casa-control-label">Ventilación cruzada</span>
+              <span class="casa-toggle">
+                <input type="checkbox" id="casa-wind" role="switch">
+                <span class="casa-toggle-track"></span>
+              </span>
+            </label>
+          </div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-value" id="casa-stat-light">97%</span>
+            <span class="stat-label">Luz natural</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="casa-stat-brise">25%</span>
+            <span class="stat-label">Brise-soleil</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-value" id="casa-stat-vent">Inactiva</span>
+            <span class="stat-label">Ventilación</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="phrase-interstitial phrase-right-2">
     <p class="phrase" data-anim="fade-up-slow">Design from site logic</p>
   </div>
@@ -440,6 +568,7 @@
   <script src="js/thermal-chart.js"></script>
   <script src="js/carbon-chart.js"></script>
   <script src="js/scroll-animations.js"></script>
+  <script src="js/casa-adapta.js"></script>
   <script>
     // Projects overlay
     (() => {
