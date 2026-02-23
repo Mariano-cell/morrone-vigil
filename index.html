@@ -417,6 +417,18 @@
   </div>
 
   <div class="phrase-interstitial phrase-left-2">
+    <p class="phrase" data-anim="fade-up">Structure in motion</p>
+  </div>
+
+  <div class="model-section">
+    <div class="model-viewport">
+      <canvas id="model-canvas"></canvas>
+      <p class="model-scroll-hint">Scroll to rotate</p>
+    </div>
+  </div>
+
+  <!-- Section 04: La Casa Se Adapta (dormido — descomentar para activar)
+  <div class="phrase-interstitial phrase-left-2">
     <p class="phrase" data-anim="fade-up">La casa se adapta</p>
   </div>
 
@@ -543,6 +555,7 @@
       </div>
     </div>
   </div>
+  fin Section 04 -->
 
   <div class="phrase-interstitial phrase-right-2">
     <p class="phrase" data-anim="fade-up-slow">Design from site logic</p>
@@ -563,12 +576,15 @@
     <p class="phrase" data-anim="slide-down">Place-driven design</p>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="js/chart.js"></script>
   <script src="js/thermal-chart.js"></script>
   <script src="js/carbon-chart.js"></script>
   <script src="js/scroll-animations.js"></script>
-  <script src="js/casa-adapta.js"></script>
+  <script src="js/model-viewer.js"></script>
+  <!-- <script src="js/casa-adapta.js"></script> -->
   <script>
     // Projects overlay
     (() => {

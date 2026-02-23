@@ -869,6 +869,41 @@ h1 {
   }
 }
 
+/* ---------- 3D Model Viewer ---------- */
+.model-section {
+  height: 300vh;
+  position: relative;
+}
+
+.model-viewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#model-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.model-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #2d4a35;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 900px) {
   .chart-section {
@@ -910,6 +945,9 @@ h1 {
   .value-item span {
     font-size: 10px;
     letter-spacing: 0.12em;
+  }
+  .model-section {
+    height: 200vh;
   }
   .casa-control input[type="range"]::-webkit-slider-thumb {
     width: 24px;
