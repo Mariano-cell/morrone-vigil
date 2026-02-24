@@ -12,6 +12,7 @@
 
   const WHEEL_SENSITIVITY = 0.0018;
   const SMOOTHING = 0.16;
+  const TAC_STEP = 0.24;
 
   const PROJECT_ITEMS = [
     'ROSARIO / 2011',
@@ -82,11 +83,67 @@
     const midAngle = (angleStart + angleEnd) * 0.5;
     const halfRange = Math.max(0.0001, (angleEnd - angleStart) * 0.5);
     const angleStep = (angleEnd - angleStart) / (VISIBLE_ITEMS - 1);
-    const slotAngles = Array.from({ length: VISIBLE_ITEMS }, (_, i) => angleStart + i * angleStep);
-
     let currentOffset = 0;
     let targetOffset = 0;
+    let audioCursor = 0;
     let rafId = null;
+    let audioCtx = null;
+
+    function ensureAudioContext() {
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return null;
+      if (!audioCtx) audioCtx = new Ctx();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    function playTac(atTime) {
+      const ctx = ensureAudioContext();
+      if (!ctx) return;
+
+      const now = atTime || ctx.currentTime;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      const filter = ctx.createBiquadFilter();
+
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(1700, now);
+      osc.frequency.exponentialRampToValueAtTime(900, now + 0.028);
+
+      filter.type = 'highpass';
+      filter.frequency.setValueAtTime(650, now);
+
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(0.09, now + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.04);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc.start(now);
+      osc.stop(now + 0.045);
+    }
+
+    function emitTacForMovement(previousPos, nextPos) {
+      const delta = nextPos - previousPos;
+      if (Math.abs(delta) < 0.000001) return;
+
+      const ctx = ensureAudioContext();
+      if (!ctx) return;
+
+      const prevStep = Math.floor(previousPos / TAC_STEP);
+      const nextStep = Math.floor(nextPos / TAC_STEP);
+      const crossings = Math.abs(nextStep - prevStep);
+      if (!crossings) return;
+
+      const startTime = ctx.currentTime;
+      for (let i = 0; i < crossings; i += 1) {
+        playTac(startTime + i * 0.012);
+      }
+    }
 
     function layout(offsetValue) {
       const rect = nav.getBoundingClientRect();
@@ -155,12 +212,23 @@
 
       const tick = () => {
         const delta = shortestDelta(currentOffset, targetOffset, TOTAL_ITEMS);
-        currentOffset = mod(currentOffset + delta * SMOOTHING, TOTAL_ITEMS);
+        const prevAudioCursor = audioCursor;
+        const move = delta * SMOOTHING;
+
+        audioCursor += move;
+        emitTacForMovement(prevAudioCursor, audioCursor);
+        currentOffset = mod(currentOffset + move, TOTAL_ITEMS);
         layout(currentOffset);
 
         if (Math.abs(delta) > 0.0006) {
           rafId = requestAnimationFrame(tick);
         } else {
+          const settleDelta = shortestDelta(currentOffset, targetOffset, TOTAL_ITEMS);
+          if (Math.abs(settleDelta) > 0.000001) {
+            const prevSettleCursor = audioCursor;
+            audioCursor += settleDelta;
+            emitTacForMovement(prevSettleCursor, audioCursor);
+          }
           currentOffset = targetOffset;
           layout(currentOffset);
           rafId = null;
@@ -172,6 +240,7 @@
 
     function onWheel(event) {
       event.preventDefault();
+      ensureAudioContext();
       targetOffset = mod(targetOffset + event.deltaY * WHEEL_SENSITIVITY, TOTAL_ITEMS);
       animateToTarget();
     }

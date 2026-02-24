@@ -1,10 +1,11 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-function initModelViewer(section) {
+function initModelViewer(section, index) {
+  console.log('[3D] initModelViewer #' + index, section.dataset.model);
   var canvas = section.querySelector('.model-canvas');
   var modelPath = section.dataset.model;
-  if (!canvas || !modelPath) return;
+  if (!canvas || !modelPath) { console.warn('[3D] #' + index + ' — missing canvas or modelPath'); return; }
 
   // Scene
   var scene = new THREE.Scene();
@@ -16,8 +17,15 @@ function initModelViewer(section) {
   camera.lookAt(0, 0, 0);
 
   // Renderer — don't set size yet, canvas may be 0×0
-  var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    console.log('[3D] #' + index + ' — WebGL renderer created OK');
+  } catch (e) {
+    console.error('[3D] #' + index + ' — WebGL renderer FAILED:', e);
+    return;
+  }
 
   // Sync renderer size to actual canvas dimensions
   function syncSize() {
@@ -49,9 +57,11 @@ function initModelViewer(section) {
     if (loadingStarted) return;
     loadingStarted = true;
 
+    console.log('[3D] #' + index + ' — loading model:', modelPath);
     loader.load(
       modelPath,
       function (gltf) {
+        console.log('[3D] #' + index + ' — model loaded OK');
         var model = gltf.scene;
 
         // Compute bounding box and scale
@@ -75,11 +85,27 @@ function initModelViewer(section) {
         pivot.add(model);
         scene.add(pivot);
 
+        // Adjust camera distance dynamically to fit this model
+        var boxAfter = new THREE.Box3().setFromObject(pivot);
+        var scaledSize = boxAfter.getSize(new THREE.Vector3());
+        var maxScaledDim = Math.max(scaledSize.x, scaledSize.y, scaledSize.z);
+        var fovRad = camera.fov * (Math.PI / 180);
+        var camDist = (maxScaledDim / 2) / Math.tan(fovRad / 2) * 1.6;
+        pivot.position.y = 0;
+        camera.position.set(0, maxScaledDim * 1.0, camDist);
+        camera.lookAt(0, 0, 0);
+
         // Apply default wireframe if data-wireframe attribute is present
         if (section.hasAttribute('data-wireframe')) {
           wireframeOn = true;
           setWireframe(true);
           if (wireframeBtn) wireframeBtn.classList.add('active');
+        }
+
+        // Apply default auto-rotate if data-autorotate attribute is present
+        if (section.hasAttribute('data-autorotate')) {
+          autoRotate = true;
+          if (autoRotateBtn) autoRotateBtn.classList.add('active');
         }
 
         // If section is already visible when model loads, start intro
@@ -109,36 +135,24 @@ function initModelViewer(section) {
     return 1 - Math.pow(1 - t, 3);
   }
 
-  // Scroll-driven rotation
-  function getScrollProgress() {
-    var rect = section.getBoundingClientRect();
-    var sectionTop = window.scrollY + rect.top;
-    var sectionHeight = section.offsetHeight;
-    var viewportHeight = window.innerHeight;
-    var progress = (window.scrollY - sectionTop) / (sectionHeight - viewportHeight);
-    return Math.max(0, Math.min(1, progress));
-  }
+  // Wheel-driven rotation — only when mouse is over the canvas column
+  var canvasCol = section.querySelector('.model-canvas-col');
+  var rotationY = 0;
+  var wheelSensitivity = 0.003; // radians per pixel of deltaY
 
   // Auto-rotate state
   var autoRotate = false;
   var autoRotateSpeed = 0.005; // radians per frame
 
-  function onScroll() {
-    if (introRunning || autoRotate) return;
-
-    var progress = getScrollProgress();
-
-    if (pivot && introPlayed) {
-      pivot.rotation.y = progress * Math.PI * 2;
-      pivot.rotation.x = Math.sin(progress * Math.PI * 2) * 0.15;
-    }
-
-    if (hint) {
-      hint.style.opacity = Math.max(0, 1 - progress * 5);
-    }
+  if (canvasCol) {
+    canvasCol.addEventListener('wheel', function (e) {
+      if (!pivot || !introPlayed || autoRotate) return;
+      e.preventDefault();
+      rotationY += e.deltaY * wheelSensitivity;
+      pivot.rotation.y = rotationY;
+      if (hint) hint.style.opacity = '0';
+    }, { passive: false });
   }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
 
   // Render loop — only when visible
   var isVisible = false;
@@ -155,24 +169,21 @@ function initModelViewer(section) {
       var t = Math.min(elapsed / introDuration, 1);
       var eased = easeOutCubic(t);
 
-      // Rotate from PI (180°) to 0, with subtle X tilt
+      // Rotate from PI (180°) to 0
       pivot.rotation.y = Math.PI * (1 - eased);
-      pivot.rotation.x = Math.sin(Math.PI * (1 - eased)) * 0.30;
 
       if (t >= 1) {
         introRunning = false;
         introPlayed = true;
         pivot.rotation.y = 0;
         pivot.rotation.x = 0;
-        // Apply current scroll position immediately
-        onScroll();
+        rotationY = 0;
       }
     }
 
     // Auto-rotate
     if (autoRotate && pivot && !introRunning) {
       pivot.rotation.y += autoRotateSpeed;
-      pivot.rotation.x = Math.sin(pivot.rotation.y) * 0.15;
     }
 
     renderer.render(scene, camera);
@@ -191,6 +202,7 @@ function initModelViewer(section) {
     entries.forEach(function (entry) {
       isVisible = entry.isIntersecting;
       if (isVisible && animId === null) {
+        console.log('[3D] #' + index + ' — section visible, canvas size:', canvas.clientWidth, 'x', canvas.clientHeight);
         canvas.classList.add('visible');
         loadModel();
         if (!introPlayed && pivot) startIntro();

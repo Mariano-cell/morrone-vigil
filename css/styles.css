@@ -840,13 +840,10 @@ h1 {
 
 /* ---------- 3D Model Viewer ---------- */
 .model-section {
-  min-height: 300vh;
   position: relative;
 }
 
 .model-viewport {
-  position: sticky;
-  top: 0;
   height: 100vh;
   overflow: hidden;
 }
@@ -1015,7 +1012,7 @@ h1 {
     letter-spacing: 0.12em;
   }
   .model-section {
-    min-height: 200vh;
+    /* no extra height needed — wheel controls rotation */
   }
   .model-layout {
     grid-template-columns: 1fr;
@@ -1163,21 +1160,33 @@ h1 {
 }
 
 .projects-nav-list a {
-  color: var(--color-crema);
+  color: var(--color-celeste);
   text-decoration: none;
   font-size: clamp(0.74rem, 1.15vw, 1rem);
   line-height: 1.2;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  transition: color 0.2s ease, opacity 0.2s ease;
+  display: inline-block;
+  transform-origin: left center;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.22s ease, letter-spacing 0.22s ease;
 }
 
 .projects-nav-list a:hover {
-  color: var(--color-celeste);
+  color: #fff;
+  transform: scale(1.045);
+  letter-spacing: 0.055em;
+}
+
+.projects-nav-list a:focus-visible {
+  color: #fff;
+  transform: scale(1.045);
+  letter-spacing: 0.055em;
 }
 
 .projects-nav-list li.active a {
-  color: var(--color-celeste);
+  color: #fff;
+  transform: scale(1.038);
+  letter-spacing: 0.05em;
 }
 
 @media (max-width: 900px) {
