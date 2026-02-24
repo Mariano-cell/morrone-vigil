@@ -43,33 +43,58 @@ function initModelViewer(section) {
   // Model pivot — rotations apply to this group so the axis is always centered
   var pivot = null;
   var loader = new GLTFLoader();
-  loader.load(modelPath, function (gltf) {
-    var model = gltf.scene;
+  var loadingStarted = false;
 
-    // Compute bounding box and scale
-    var box = new THREE.Box3().setFromObject(model);
-    var center = box.getCenter(new THREE.Vector3());
-    var size = box.getSize(new THREE.Vector3());
+  function loadModel() {
+    if (loadingStarted) return;
+    loadingStarted = true;
 
-    var maxDim = Math.max(size.x, size.y, size.z);
-    var scale = 3 / maxDim;
-    model.scale.setScalar(scale);
+    loader.load(
+      modelPath,
+      function (gltf) {
+        var model = gltf.scene;
 
-    // Offset model inside pivot so bounding box center sits at pivot origin
-    model.position.set(
-      -center.x * scale,
-      -center.y * scale,
-      -center.z * scale
+        // Compute bounding box and scale
+        var box = new THREE.Box3().setFromObject(model);
+        var center = box.getCenter(new THREE.Vector3());
+        var size = box.getSize(new THREE.Vector3());
+
+        var maxDim = Math.max(size.x, size.y, size.z);
+        var scale = maxDim > 0 ? 3 / maxDim : 1;
+        model.scale.setScalar(scale);
+
+        // Offset model inside pivot so bounding box center sits at pivot origin
+        model.position.set(
+          -center.x * scale,
+          -center.y * scale,
+          -center.z * scale
+        );
+
+        // Pivot group sits at scene origin — all rotations happen around the center
+        pivot = new THREE.Group();
+        pivot.add(model);
+        scene.add(pivot);
+
+        // Apply default wireframe if data-wireframe attribute is present
+        if (section.hasAttribute('data-wireframe')) {
+          wireframeOn = true;
+          setWireframe(true);
+          if (wireframeBtn) wireframeBtn.classList.add('active');
+        }
+
+        // If section is already visible when model loads, start intro
+        if (isVisible && !introPlayed) startIntro();
+      },
+      undefined,
+      function (error) {
+        console.error('Model load failed:', modelPath, error);
+        if (hint) {
+          hint.textContent = 'No se pudo cargar el modelo 3D';
+          hint.style.opacity = '0.85';
+        }
+      }
     );
-
-    // Pivot group sits at scene origin — all rotations happen around the center
-    pivot = new THREE.Group();
-    pivot.add(model);
-    scene.add(pivot);
-
-    // If section is already visible when model loads, start intro
-    if (isVisible && !introPlayed) startIntro();
-  });
+  }
 
   // Scroll hint
   var hint = section.querySelector('.model-scroll-hint');
@@ -160,13 +185,14 @@ function initModelViewer(section) {
     introRunning = true;
     introStart = 0;
     pivot.rotation.y = Math.PI;
-    canvas.classList.add('visible');
   }
 
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       isVisible = entry.isIntersecting;
       if (isVisible && animId === null) {
+        canvas.classList.add('visible');
+        loadModel();
         if (!introPlayed && pivot) startIntro();
         renderLoop(performance.now());
       } else if (!isVisible && animId !== null) {

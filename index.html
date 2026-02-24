@@ -19,39 +19,6 @@
     </filter>
   </svg>
 
-  <header class="site-header">
-    <nav>
-      <a href="#" id="btn-proyectos">Proyectos</a>
-      <a href="#">Sobre nosotros</a>
-    </nav>
-  </header>
-
-  <!-- Projects overlay -->
-  <div class="projects-overlay" id="projects-overlay">
-    <button class="projects-close" id="projects-close">&times;</button>
-    <div class="projects-grid">
-      <div class="projects-image">
-        <img src="img/red-earth.jpg" alt="Projects" id="projects-img">
-      </div>
-      <div class="projects-menu">
-        <div class="projects-semicircle">
-          <svg class="semicircle-line" viewBox="0 0 500 1000" preserveAspectRatio="none">
-            <path d="M500 0 C500 0, 0 250, 0 500 C0 750, 500 1000, 500 1000" stroke="rgba(240,235,227,0.2)"
-              stroke-width="1" fill="none" />
-          </svg>
-          <a href="#" class="project-link" style="--i:0">Casa Piedra</a>
-          <a href="#" class="project-link" style="--i:1">Refugio Andino</a>
-          <a href="#" class="project-link" style="--i:2">Torre Río</a>
-          <a href="#" class="project-link" style="--i:3">Vivienda Bosque</a>
-          <a href="#" class="project-link" style="--i:4">Bodega Termal</a>
-          <a href="#" class="project-link" style="--i:5">Centro Cívico</a>
-          <a href="#" class="project-link" style="--i:6">Pabellón Sur</a>
-          <a href="#" class="project-link" style="--i:7">Escuela Solar</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <section class="hero">
     <h1>
       TIMBÓ
@@ -536,7 +503,7 @@
     <p class="phrase" data-anim="fade-left">Form follows landscape</p>
   </div>
 
-  <div class="model-section" data-model="img/sydney-opera.glb">
+  <div class="model-section" data-model="img/sydney-opera.glb" data-wireframe>
     <div class="model-viewport">
       <div class="model-layout">
         <div class="model-canvas-col">
@@ -662,71 +629,6 @@
   </div>
   fin Section 04 -->
 
-  <!-- Sky -->
-  <rect x="0" y="0" width="600" height="340" fill="url(#casa-sky-grad)" />
-
-  <!-- Sun -->
-  <g id="casa-sun-group" transform="translate(300,60)">
-    <circle r="18" fill="#f5c842" opacity="0.9" />
-    <line x1="0" y1="-26" x2="0" y2="-32" stroke="#f5c842" stroke-width="2" />
-    <line x1="0" y1="26" x2="0" y2="32" stroke="#f5c842" stroke-width="2" />
-    <line x1="-26" y1="0" x2="-32" y2="0" stroke="#f5c842" stroke-width="2" />
-    <line x1="26" y1="0" x2="32" y2="0" stroke="#f5c842" stroke-width="2" />
-    <line x1="-18" y1="-18" x2="-23" y2="-23" stroke="#f5c842" stroke-width="2" />
-    <line x1="18" y1="-18" x2="23" y2="-23" stroke="#f5c842" stroke-width="2" />
-    <line x1="-18" y1="18" x2="-23" y2="23" stroke="#f5c842" stroke-width="2" />
-    <line x1="18" y1="18" x2="23" y2="23" stroke="#f5c842" stroke-width="2" />
-  </g>
-
-  <!-- Ground -->
-  <rect x="0" y="340" width="600" height="60" fill="#c4a882" />
-  <line x1="0" y1="340" x2="600" y2="340" stroke="#8a7560" stroke-width="1.5" />
-
-  <!-- Building structure (stroke-only) -->
-  <!-- Roof slab with overhangs -->
-  <line x1="70" y1="120" x2="530" y2="120" stroke="#2d4a35" stroke-width="3" />
-  <line x1="70" y1="130" x2="530" y2="130" stroke="#2d4a35" stroke-width="2" />
-  <!-- Left wall -->
-  <line x1="100" y1="130" x2="100" y2="340" stroke="#2d4a35" stroke-width="2.5" />
-  <!-- Right wall (with window gap 170-290) -->
-  <line x1="500" y1="130" x2="500" y2="170" stroke="#2d4a35" stroke-width="2.5" />
-  <line x1="500" y1="290" x2="500" y2="340" stroke="#2d4a35" stroke-width="2.5" />
-  <!-- Window frame -->
-  <rect x="340" y="170" width="160" height="120" fill="none" stroke="#2d4a35" stroke-width="1.5" />
-  <!-- Interior floor -->
-  <line x1="100" y1="330" x2="500" y2="330" stroke="#2d4a35" stroke-width="1" opacity="0.4" />
-  <!-- Ground slab -->
-  <line x1="70" y1="340" x2="530" y2="340" stroke="#2d4a35" stroke-width="3" />
-
-  <!-- Light beam (clipped to interior) -->
-  <polygon id="casa-lightbeam" points="500,170 500,290 400,330 450,330" fill="#f5c842" opacity="0.06"
-    clip-path="url(#casa-interior-clip)" />
-
-  <!-- Floor glow -->
-  <rect id="casa-floorglow" x="400" y="324" width="80" height="6" fill="#f5c842" opacity="0.1" rx="2" />
-
-  <!-- Brise-soleil louvers -->
-  <g id="casa-brise" style="opacity: var(--brise-opacity, 0)">
-    <rect x="340" y="132" width="90" height="5" fill="#2d4a35" rx="1" />
-    <rect x="340" y="141" width="90" height="5" fill="#2d4a35" rx="1" />
-    <rect x="340" y="150" width="90" height="5" fill="#2d4a35" rx="1" />
-    <rect x="340" y="159" width="90" height="5" fill="#2d4a35" rx="1" />
-    <rect x="340" y="168" width="90" height="5" fill="#2d4a35" rx="1" />
-  </g>
-
-  <!-- Wind arrows (clipped to interior) -->
-  <g id="casa-wind-arrows" clip-path="url(#casa-interior-clip)" style="opacity:0">
-    <path class="casa-wind-path" d="M110,200 C200,190 300,210 490,200" fill="none" stroke="#2d4a35" stroke-width="1.5"
-      stroke-dasharray="8 6" marker-end="url(#casa-arrowhead)" />
-    <path class="casa-wind-path" d="M110,240 C200,230 300,250 490,240" fill="none" stroke="#2d4a35" stroke-width="1.5"
-      stroke-dasharray="8 6" marker-end="url(#casa-arrowhead)" />
-    <path class="casa-wind-path" d="M110,280 C200,270 300,290 490,280" fill="none" stroke="#2d4a35" stroke-width="1.5"
-      stroke-dasharray="8 6" marker-end="url(#casa-arrowhead)" />
-  </g>
-  </svg>
-  </div>
-
-
 
   <div class="phrase-interstitial phrase-right-2">
     <p class="phrase" data-anim="fade-up-slow">Design from site logic</p>
@@ -749,6 +651,32 @@
     <p class="phrase" data-anim="slide-down">Place-driven design</p>
   </div>
 
+  <section class="projects-nav-section">
+    <div class="projects-nav-media">
+      <img src="img/foto-instagram.png" alt="Vista de proyecto arquitectónico" loading="lazy">
+      <h2 class="projects-media-title">PROYECTOS</h2>
+    </div>
+    <nav
+      class="projects-nav-menu"
+      aria-label="Navegacion de proyectos"
+      data-radial-menu
+      data-center-x="0.1"
+      data-center-y="0.5"
+      data-outer-radius-ratio="0.82"
+      data-inner-radius-ratio="0.68"
+      data-label-offset-ratio="0.08"
+      data-arc-start="-90"
+      data-arc-end="90"
+      data-item-start="-60"
+      data-item-end="60">
+      <svg class="projects-nav-arcs" aria-hidden="true">
+        <path class="projects-arc projects-arc-outer"></path>
+        <path class="projects-arc projects-arc-inner"></path>
+      </svg>
+      <ul class="projects-nav-list" data-radial-items></ul>
+    </nav>
+  </section>
+
   <script type="importmap">
   {
     "imports": {
@@ -762,36 +690,9 @@
   <script src="js/thermal-chart.js"></script>
   <script src="js/carbon-chart.js"></script>
   <script src="js/scroll-animations.js"></script>
+  <script src="js/radial-menu.js"></script>
   <script type="module" src="js/model-viewer.js"></script>
   <!-- <script src="js/casa-adapta.js"></script> -->
-  <script>
-    // Projects overlay
-    (() => {
-      const btn = document.getElementById('btn-proyectos');
-      const overlay = document.getElementById('projects-overlay');
-      const close = document.getElementById('projects-close');
-      if (!btn || !overlay) return;
-
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        overlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
-
-      function closeOverlay() {
-        overlay.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-
-      close.addEventListener('click', closeOverlay);
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) closeOverlay();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && overlay.classList.contains('open')) closeOverlay();
-      });
-    })();
-  </script>
 </body>
 
 </html>

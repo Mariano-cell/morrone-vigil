@@ -20,10 +20,4 @@
 
   document.querySelectorAll('.gallery-hero, .gallery-row img').forEach((el) => galleryObserver.observe(el));
 
-  const header = document.querySelector('.site-header');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 80);
-    }, { passive: true });
-  }
 })();
